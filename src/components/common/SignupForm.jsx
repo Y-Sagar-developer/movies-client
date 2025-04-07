@@ -109,15 +109,29 @@ const SignupForm = ({ switchAuthState }) => {
         fullWidth
         size="large"
         variant="contained"
-        sx={{ marginTop: 4 }}
         loading={isLoginRequest}
+        sx={{
+          marginTop: 4,
+          backgroundColor: "#1976d2", // Blue
+          color: "#fff",
+          "&:hover": {
+            backgroundColor: "#1565c0", // Slightly darker blue on hover
+          },
+        }}
       >
         sign up
       </LoadingButton>
 
       <Button
         fullWidth
-        sx={{ marginTop: 1 }}
+        sx={{
+          marginTop: 1,
+          backgroundColor: "#1976d2", // Blue background
+          color: "#fff", // White text
+          "&:hover": {
+            backgroundColor: "#1565c0", // Darker blue on hover
+          },
+        }}
         onClick={() => switchAuthState()}
       >
         sign in

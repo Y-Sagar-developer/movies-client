@@ -78,7 +78,11 @@ const MediaSearch = () => {
                 key={index}
                 variant={mediaType === item ? "contained" : "text"}
                 sx={{
-                  color: mediaType === item ? "primary.contrastText" : "text.primary"
+                  color: mediaType === item ? "#fff" : "#1976d2",
+                  backgroundColor: mediaType === item ? "#1976d2" : "transparent",
+                  '&:hover': {
+                    backgroundColor: mediaType === item ? "#1565c0" : "rgba(25, 118, 210, 0.08)"
+                  }
                 }}
                 onClick={() => onCategoryChange(item)}
               >
@@ -88,7 +92,7 @@ const MediaSearch = () => {
           </Stack>
           <TextField
             color="success"
-            placeholder="Search MoonFlix"
+            placeholder="Search SagarMovies"
             sx={{ width: "100%" }}
             autoFocus
             onChange={onQueryChange}
@@ -100,6 +104,14 @@ const MediaSearch = () => {
             <LoadingButton
               loading={onSearch}
               onClick={() => setPage(page + 1)}
+              variant="contained"
+              sx={{
+                backgroundColor: "#1976d2",
+                color: "#fff",
+                '&:hover': {
+                  backgroundColor: "#1565c0"
+                }
+              }}
             >
               load more
             </LoadingButton>

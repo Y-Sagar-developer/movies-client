@@ -23,7 +23,7 @@ const Container = ({ header, children }) => {
               top: "100%",
               height: "5px",
               width: "100px",
-              backgroundColor: "primary.main"
+              // backgroundColor: "primary.main"
             }
           }}>
             <Typography variant="h5" fontWeight="700" textTransform="uppercase">

@@ -223,35 +223,47 @@ const MediaList = () => {
             {mediaType === tmdbConfigs.mediaType.movie ? "Movies" : "TV Series"}
           </Typography>
           <Stack direction="row" spacing={2}>
-            {category.map((cate, index) => (
-              <Button
-                key={index}
-                size="large"
-                variant={currCategory === index ? "contained" : "text"}
-                sx={{
-                  color: currCategory === index ? "primary.contrastText" : "text.primary"
-                }}
-                onClick={() => onCategoryChange(index)}
-              >
-                {cate}
-              </Button>
-            ))}
+          {category.map((cate, index) => (
+  <Button
+    key={index}
+    size="large"
+    variant={currCategory === index ? "contained" : "text"}
+    sx={{
+      color: currCategory === index ? "#fff" : "#1976d2",
+      backgroundColor: currCategory === index ? "#1976d2" : "transparent",
+      '&:hover': {
+        backgroundColor: currCategory === index ? "#1565c0" : "rgba(25, 118, 210, 0.08)"
+      }
+    }}
+    onClick={() => onCategoryChange(index)}
+  >
+    {cate}
+  </Button>
+))}
+
           </Stack>
         </Stack>
         <MediaGrid
           medias={medias}
           mediaType={mediaType}
         />
-       <Button
-  sx={{ marginTop: 8 }}
+<Button
+  sx={{
+    marginTop: 8,
+    backgroundColor: "#1976d2", // Blue background
+    color: "#fff",              // White text
+    '&:hover': {
+      backgroundColor: "#1565c0" // Darker blue on hover
+    }
+  }}
   fullWidth
-  color="primary"
   variant="contained"
   disabled={mediaLoading}
   onClick={onLoadMore}
 >
   {mediaLoading ? "Loading..." : "Load More"}
 </Button>
+
 
       </Box>
     </>

@@ -96,15 +96,23 @@ const PasswordUpdate = () => {
               helperText={form.touched.confirmNewPassword && form.errors.confirmNewPassword}
             />
 
-            <LoadingButton
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{ marginTop: 4 }}
-              loading={onRequest}
-            >
-              update password
-            </LoadingButton>
+<LoadingButton
+  type="submit"
+  variant="contained"
+  fullWidth
+  sx={{
+    marginTop: 4,
+    backgroundColor: "#1976d2",
+    color: "#fff",
+    '&:hover': {
+      backgroundColor: "#1565c0"
+    }
+  }}
+  loading={onRequest}
+>
+  update password
+</LoadingButton>
+
           </Stack>
         </Box>
       </Container>
